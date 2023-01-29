@@ -15,7 +15,7 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", orphanRemoval = true)
     private List<RecipeIngredient> recipeIngredientList;
     @OneToOne ( cascade = {CascadeType.PERSIST,CascadeType.REMOVE, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH})
-   @Column(name = "recipeInstruction_id")
+   @JoinColumn (name = "recipeInstruction_id")
     private RecipeInstruction recipeInstruction;
 
     @ManyToMany
